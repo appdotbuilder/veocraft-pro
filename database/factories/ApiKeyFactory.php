@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\DeveloperProfile;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ApiKey>
+ */
+class ApiKeyFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'developer_profile_id' => DeveloperProfile::factory(),
+            'text_llm_key' => 'sk-' . $this->faker->lexify('???????????????????????????'),
+            'image_gen_key' => 'sk-' . $this->faker->lexify('???????????????????????????'),
+            'image_vision_key' => 'sk-' . $this->faker->lexify('???????????????????????????'),
+        ];
+    }
+}
